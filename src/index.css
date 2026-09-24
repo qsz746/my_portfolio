@@ -2,8 +2,8 @@
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.65;
-  color: #24364e;
-  background: #f5f7fb;
+  color: #242424;
+  background: #fff;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
@@ -14,7 +14,6 @@
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse at 50% 0, #eaf0fc, transparent 600px);
 }
 
 a {

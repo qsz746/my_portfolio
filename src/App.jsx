@@ -1,4 +1,4 @@
-﻿import { projects } from './projects'
+import { projects } from './projects'
 import { profile } from './profile'
 import { useState } from 'react'
 import ProjectVideo from './ProjectVideo'
@@ -40,14 +40,12 @@ function ProjectSection({ project, onOpenImage }) {
   return (
     <article className="project-section" id={`project-${project.id}`} aria-labelledby={`project-title-${project.id}`}>
       <div className="project-heading">
-        <span className="project-number" aria-hidden="true">{project.id}</span>
-        <div>
-          <p className="project-category">
-            <span>{project.category}</span>
-            {project.period && <span>{project.period}</span>}
-          </p>
-          <h2 id={`project-title-${project.id}`}>{project.title}</h2>
-        </div>
+        <p className="project-category">
+          <span>{project.id} / {project.category}</span>
+          {project.period && <span>{project.period}</span>}
+        </p>
+        <h2 id={`project-title-${project.id}`}>{project.title}</h2>
+        <p className="project-subtitle">{project.subtitle}</p>
       </div>
       <div className={`project-row project-overview${mainImage ? '' : ' project-overview-text'}`}>
         {mainImage && <ProjectPhoto image={mainImage} onOpen={onOpenImage} />}
@@ -86,6 +84,7 @@ function ProjectSection({ project, onOpenImage }) {
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedProjectId, setSelectedProjectId] = useState(projects[0]?.id ?? null)
 
   function openImage(src) {
     const index = galleryImages.findIndex(image => image.src === src)
@@ -116,15 +115,32 @@ function App() {
             <h2 id="projects-title">Projects</h2>
           </div>
 
-          <nav className="project-index" aria-label="Project navigation">
-            {projects.map(project => (
-              <a key={project.id} href={`#project-${project.id}`}>
-                <span className="project-index-number">{project.id}</span>
-                <span>{project.navTitle || project.title}</span>
-                <span className="project-index-arrow" aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </nav>
+          <div className="project-cards" aria-label="Project overview cards">
+            {projects.map(project => {
+              const primaryImage = project.images[0]
+              const isSelected = selectedProjectId === project.id
+
+              return (
+                <a
+                  key={project.id}
+                  href={`#project-${project.id}`}
+                  className={`project-card${isSelected ? ' project-card-active' : ''}`}
+                  onClick={() => setSelectedProjectId(project.id)}
+                >
+                  {primaryImage && (
+                    <div className="project-card-media">
+                      <img src={primaryImage.src} alt={primaryImage.alt} loading="lazy" decoding="async" />
+                    </div>
+                  )}
+                  <div className="project-card-copy">
+                    <h3>{project.title}</h3>
+                    {project.subtitle && <p>{project.subtitle}</p>}
+                  </div>
+                  <span className="project-card-action">More Details</span>
+                </a>
+              )
+            })}
+          </div>
 
           <div className="project-list">
             {projects.map(project => <ProjectSection project={project} key={project.id} onOpenImage={openImage} />)}

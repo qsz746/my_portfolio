@@ -22,7 +22,7 @@ The LinkedIn and Résumé buttons open in a new tab when configured. LinkedIn is
 
 ## Update projects
 
-Edit `src/projects.js`. Each object creates a fully expanded project section, displayed in array order. The visible numbered project index links to `#project-01` through `#project-05`; `navTitle` gives each link a short label. Projects appear in separate white sections on a light background, with strong numbered dividers and large dark text. The index does not repeat project photos. Update `title`, `subtitle`, `description`, and `highlights` to change its content; keep each overview to a concise summary and up to three useful technical bullets. The `tags` supply the plain-text tools line. The optional `period` field displays project dates. An empty `github` field hides the repository link.
+Edit `src/projects.js`. Each object creates a fully expanded project section, displayed in array order. The original photo overview cards link to `#project-01` through `#project-05`. The page retains its white background, centered headings, and expanded photo/text rows. Stronger rules separate projects; overview cards adapt to two columns on tablets and one on phones. Update `title`, `subtitle`, `description`, and `highlights` to change its content; keep each overview to a concise summary and up to three useful technical bullets. The `tags` supply the plain-text tools line. The optional `period` field displays project dates. An empty `github` field hides the repository link.
 
 Place images and MP4 videos in the project's folder under `public/media/`, then add their paths to `src/projects.js`. A file at `public/media/...` is served at `/media/...`:
 
@@ -34,7 +34,7 @@ images: [
 video: '/media/light-thermistor-monitor/demo.mp4', // Example path; add the file before using it.
 ```
 
-Each section presents its first photo with the project overview, followed by the demo and its explanation, then any remaining evidence photos and their explanations. Each image and video appears once. Click a photo to open the in-page image viewer; use its arrows or the keyboard's left/right arrows to browse, and press Escape to close. Add an image `title` and optional `description` to explain it, and use `layout: 'portrait'` for portrait photos. Local MP4 videos use the browser's native player.
+Each section presents its first photo with the project overview, followed by the demo and its explanation, then any remaining evidence photos and their explanations. Overview cards use photo thumbnails; expanded sections show the full photos and videos. Click a photo to open the in-page image viewer; use its arrows or the keyboard's left/right arrows to browse, and press Escape to close. Add an image `title` and optional `description` to explain it, and use `layout: 'portrait'` for portrait photos. Local MP4 videos use the browser's native player.
 
 To embed a YouTube demo, add `youtubeId` to the project. Use the 11-character ID from its URL: `https://youtu.be/1CN9ugxQNpI` becomes:
 
