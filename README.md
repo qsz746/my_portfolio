@@ -22,7 +22,7 @@ The LinkedIn and Résumé buttons open in a new tab when configured. LinkedIn is
 
 ## Update projects
 
-Edit `src/projects.js`. Each object creates a fully expanded project section, displayed in array order. The original photo overview cards link to `#project-01` through `#project-05`. The page retains its white background, centered headings, and expanded photo/text rows. Stronger rules separate projects; overview cards adapt to two columns on tablets and one on phones. Update `title`, `subtitle`, `description`, and `highlights` to change its content; keep each overview to a concise summary and up to three useful technical bullets. The `tags` supply the plain-text tools line. The optional `period` field displays project dates. An empty `github` field hides the repository link.
+Edit `src/projects.js`. Each object creates a fully expanded project section, displayed in array order. The compact "Jump to a project" directory links to `#project-01` through `#project-05`. The page uses a white background and large dark text. Update `title`, `subtitle`, `description`, and `highlights` to change its content; keep each overview to a concise summary and up to three useful technical bullets. The `tags` supply the plain-text tools line. The optional `period` field displays project dates. An empty `github` field hides the repository link.
 
 Place images and MP4 videos in the project's folder under `public/media/`, then add their paths to `src/projects.js`. A file at `public/media/...` is served at `/media/...`:
 
@@ -34,7 +34,7 @@ images: [
 video: '/media/light-thermistor-monitor/demo.mp4', // Example path; add the file before using it.
 ```
 
-Each section presents its first photo with the project overview, followed by the demo and its explanation, then any remaining evidence photos and their explanations. Overview cards use photo thumbnails; expanded sections show the full photos and videos. Click a photo to open the in-page image viewer; use its arrows or the keyboard's left/right arrows to browse, and press Escape to close. Add an image `title` and optional `description` to explain it, and use `layout: 'portrait'` for portrait photos. Local MP4 videos use the browser's native player.
+Each section presents its first photo with the project overview, followed by the demo and its explanation, then any remaining evidence photos and their explanations. Each image and video appears once. Click a photo to open the in-page image viewer; use its arrows or the keyboard's left/right arrows to browse, and press Escape to close. Add an image `title` and optional `description` to explain it, and use `layout: 'portrait'` for portrait photos. Local MP4 videos use the browser's native player.
 
 To embed a YouTube demo, add `youtubeId` to the project. Use the 11-character ID from its URL: `https://youtu.be/1CN9ugxQNpI` becomes:
 
@@ -78,11 +78,11 @@ The production build is written to `dist/`. The preview command serves that buil
 
 1. **Light & Thermistor Monitor:** Based on the supplied resume summary and GitHub repository.
 2. **DE1-SOC simple ipod:** FPGA Song Player on DE1-SoC, May 2025 – Jun 2025. Based on the supplied implementation summary, with a link to the supplied GitHub repository.
-3. **Digital Signal Synthesis:** Based on the GitHub repository and its README.pdf.
-4. **CV-8052 Display Controller:** Based on the CPEN312 Lab 4 specification, DE0-CV hardware photo, and supplied YouTube Shorts demo. Individual implementation details have not been independently verified.
+3. **CV-8052 Display Controller:** Based on the CPEN312 Lab 4 specification, DE0-CV hardware photo, and supplied YouTube Shorts demo. Individual implementation details have not been independently verified.
+4. **Digital Signal Synthesis:** Based on the GitHub repository and its README.pdf.
 5. **Smart Embedded Fan Control:** STM32F103 fan controller with PWM speed and direction control, SG90 automatic oscillation, debounced buttons, and an I²C OLED display. Based on the supplied implementation summary and [GitHub repository](https://github.com/qsz746/Smart-Embedded-Fan-Control-System).
 
-Seven project photos and five YouTube demos are included: the sensor monitor (project 01, portrait), FPGA song player (project 02, landscape), display controller (project 04, portrait), and two smart fan demos (project 05, portrait). Project 03 has no video. The original lab handout is not published with the website. Multiple YouTube Shorts may be listed in `videoLinks`; these take precedence over `video` when `youtubeId` is absent.
+Seven project photos and three YouTube demos are included: **Light & Thermistor Monitor** (project 01, portrait), **DE1-SOC simple ipod** (project 02, landscape), and **CV-8052 Display Controller** (project 03, portrait). The remaining projects have no videos yet, and the original lab handout is not published with the website.
 
 ## Project photos
 
@@ -93,8 +93,8 @@ These files are included in `public/media/` and referenced by `src/projects.js`:
 | 01 | Hardware setup | `light-thermistor-monitor/hardware-setup.jpg` |
 | 01 | Serial telemetry | `light-thermistor-monitor/serial-telemetry.png` |
 | 02 | DE1-SoC song player | `simple-ipod/DE1-SOC.jpg` |
-| 04 | DE0-CV board | `cv-8052-display-controller/de0-cv-board.png` |
-| 03 | FSK waveform display | `digital-signal-synthesis/fsk-waveforms.jpg` |
+| 03 | DE0-CV board | `cv-8052-display-controller/de0-cv-board.png` |
+| 04 | FSK waveform display | `digital-signal-synthesis/fsk-waveforms.jpg` |
 | 05 | Fan controller hardware setup | `smart-fan-controller/hardware-setup.png` |
 | 05 | Fan controller wiring diagram | `smart-fan-controller/wiring-diagram.png` |
 

@@ -1,6 +1,6 @@
 ﻿export const projects = [
   {
-    id: '01', navTitle: 'Light & temperature', category: 'Embedded Systems', title: 'STM32 Light & Temperature Monitor', subtitle: 'ADC · DMA · PWM · UART', chip: 'STM32F103', theme: 'green',
+    id: '01', category: 'Embedded Systems', title: 'STM32 Light & Temperature Monitor', subtitle: 'ADC · DMA · PWM · UART', chip: 'STM32F103', theme: 'green',
     description: 'Sensor-driven embedded control system for light and temperature monitoring with real-time feedback and threshold-based alerts.',
     tags: ['STM32F103', 'C', 'ADC', 'DMA', 'PWM', 'UART'],
     highlights: ['TIM3 TRGO triggers ADC1 dual-channel scans at 100 Hz; circular DMA removes the need for CPU polling.', 'An 8-sample moving average smooths readings before TIM2 Channel 3 PWM adjusts LED brightness.', 'Hysteresis prevents warning chatter near temperature thresholds; USART1 streams live sensor diagnostics.'],
@@ -18,7 +18,7 @@
     video: '',
   },
   {
-    id: '02', navTitle: 'FPGA song player', category: 'FPGA & Digital Design', title: 'DE1-SoC FPGA Song Player', subtitle: 'SystemVerilog · FSM · Audio', period: 'May 2025 – Jun 2025', chip: 'DE1-SoC', theme: 'blue',
+    id: '02', category: 'FPGA & Digital Design', title: 'DE1-SoC FPGA Song Player', subtitle: 'SystemVerilog · FSM · Audio', period: 'May 2025 – Jun 2025', chip: 'DE1-SoC', theme: 'blue',
     description: 'FPGA-based music player with synchronized playback control, memory sequencing, and audio output validation.',
     tags: ['SystemVerilog', 'FPGA', 'FSM', 'ModelSim', 'SignalTap', 'Quartus'],
     highlights: ['FSM-based playback controls coordinate clock division and memory-address sequencing.', 'Verified function and timing with ModelSim testbenches and SignalTap on-chip debugging.', 'Deployed through Quartus with a PicoBlaze processor for average-signal computation and LED display.'],
@@ -34,7 +34,7 @@
     video: '',
   },
   {
-    id: '03', navTitle: 'Signal synthesis', category: 'FPGA & Digital Design', title: 'Nios DDS / LFSR / Clock Domain Lab', subtitle: 'Qsys · DDS · SignalTap', chip: 'NIOS / FPGA', theme: 'purple',
+    id: '03', category: 'FPGA & Digital Design', title: 'Nios DDS / LFSR / Clock Domain Lab', subtitle: 'Qsys · DDS · SignalTap', chip: 'NIOS / FPGA', theme: 'purple',
     description: 'Lab-scale direct digital synthesis system with waveform selection, LFSR modulation, and clock-domain synchronization.',
     tags: ['Nios', 'Qsys', 'DDS', 'LFSR', 'Clock Domains', 'SignalTap'],
     highlights: ['Combines DDS waveform selection, LFSR modulation, and synchronization across clock domains.', 'ModelSim simulations cover the 5-bit LFSR, DDS selector, and fast-to-slow clock-domain synchronizer.', 'SignalTap captures document DDS, modulation, and clock-domain signals on hardware.'],
@@ -47,7 +47,7 @@
     video: '',
   },
   {
-    id: '04', navTitle: 'Digital display', category: 'FPGA & Digital Design', title: 'CV-8052 Display Controller', subtitle: '8051 Assembly · DE0-CV', chip: 'CV-8052', theme: 'sand',
+    id: '04', category: 'FPGA & Digital Design', title: 'Lab 4 Memory / Decryption Controller', subtitle: '8051 Assembly · DE0-CV', chip: 'CV-8052', theme: 'sand',
     description: 'Display and control project implementing state-based output modes, switch-driven logic, and timed digital sequencing on the CV-8052.',
     tags: ['8051 Assembly', 'DE0-CV', 'Quartus Prime', 'CrossIDE'],
     highlights: ['Lab specification: SW2–SW0 select the display mode and KEY3 latches the selection.', 'Specified modes include static digits, left/right scrolling, blinking, digit-by-digit output, and greeting messages.', 'The lab specifies 1-second or 0.5-second intervals via SW3, plus a custom display mode.'],
@@ -64,7 +64,7 @@
     video: '',
   },
   {
-    id: '05', navTitle: 'Smart fan', category: 'Embedded Systems', title: 'Smart Embedded Fan Control', subtitle: 'STM32F103 · PWM · Servo · OLED', chip: 'STM32F103', theme: 'green',
+    id: '05', category: 'Embedded Systems', title: 'Smart Embedded Fan Control', subtitle: 'STM32F103 · PWM · Servo · OLED', chip: 'STM32F103', theme: 'green',
     coverTagline: 'CONTROL. OSCILLATE. DISPLAY.',
     description: 'Bare-metal embedded fan controller with GPIO-driven motion logic, PWM speed control, and real-time system feedback.',
     tags: ['Bare-metal C', 'STM32F103', 'PWM', 'FSM', 'I2C OLED'],

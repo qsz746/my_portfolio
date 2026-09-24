@@ -1,4 +1,4 @@
-import { projects } from './projects'
+﻿import { projects } from './projects'
 import { profile } from './profile'
 import { useState } from 'react'
 import ProjectVideo from './ProjectVideo'
@@ -35,7 +35,7 @@ function ProjectPhoto({ image, onOpen }) {
 
 function ProjectSection({ project, onOpenImage }) {
   const [mainImage, ...detailImages] = project.images
-  const hasVideo = Boolean(project.youtubeId || project.videoLinks?.length || project.video)
+  const hasVideo = Boolean(project.youtubeId || project.video)
 
   return (
     <article className="project-section" id={`project-${project.id}`} aria-labelledby={`project-title-${project.id}`}>
